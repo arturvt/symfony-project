@@ -9,3 +9,9 @@
 /vendor/
 /bin/
 /composer.phar
+
+/app/.DS_Store
+
+/app/logs/.gitkeep
+
+/app/cache/.gitkeep
