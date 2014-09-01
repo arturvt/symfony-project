@@ -1,0 +1,7 @@
+project_testtest_homepage:
+    path:     /random/{limit}
+    defaults: { _controller: ProjectTesttestBundle:Default:index }
+
+#project_testtest_aboutpage:
+#    path: /random_about
+#    default: { _controller: ProjectTesttestBundle:Default:about}

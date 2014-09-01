@@ -1,10 +1,15 @@
 <?php
-// echo '<h1>Yehaaa</h1>';
 
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-$response = new Response();
-$response->setContent('<html><body><h1>Hello world!</h1></body></html>');
-$response->setStatusCode(Response::HTTP_OK);
-$response->headers->set('Content-Type', 'text/html');
-// prints the HTTP headers followed by the content
+$request = Request::createFromGlobals();
+$path = $request->getPathInfo(); // the URI path being requested
+if (in_array($path, array('', '/'))) {
+    $response = new Response('Welcome to the homepage.');
+} elseif ($path == '/contact') {
+    $response = new Response('Contact us');
+}else{
+    $response = new Response('Page not found.', Response::HTTP_NOT_FOUND);
+}
 $response->send();

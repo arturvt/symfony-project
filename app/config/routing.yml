@@ -1,0 +1,7 @@
+project_testtest:
+    resource: "@ProjectTesttestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+contact:
+  path: /contact
+  defaults: { _controller: AcmeDemoBundle:Main:contact}
