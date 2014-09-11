@@ -16,3 +16,7 @@
 /app/logs/.gitkeep
 
 /app/cache/.gitkeep
+
+/.idea/workspace.xml
+
+/composer.lock
