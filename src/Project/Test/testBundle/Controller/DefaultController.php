@@ -11,19 +11,10 @@ class DefaultController extends Controller
     {
         $number = rand(1,$limit);
 
-//        return $this->render(
-//            'ProjectTesttestBundle:Random:index.html.twig',
-//            array('number' => $number)
-//        );
         return $this->render(
             'ProjectTesttestBundle:Random:index.html.twig',
             array('number' => $number)
         );
-
-
-//        return new Response('<html><body>Random number ('.$limit.'): '.rand(1, $limit).'</body></html>');
-//        return $this->render('ProjectTesttestBundle:Default:index.html.twig', array('name' => $name));
-
     }
 
     public function aboutAction()
