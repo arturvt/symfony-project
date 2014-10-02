@@ -1,0 +1,22 @@
+blog_api_homepage:
+    path:     /user/{name}
+    defaults: { _controller: BlogAPIBundle:Default:index }
+
+
+# User Routes
+user_get:
+    pattern:  /user/{uuid}.{_format}
+    defaults: { _controller: PulseAPIBundle:Project:get, _format: ~, entityService: pulse_api.project_service}
+    requirements:
+        _method: GET
+        id: "\d+"
+
+acme_blog_get_users:
+    path:     /user
+    defaults: { _controller: AcmeBlogBundle:Default:listUsers }
+    methods: [GET]
+
+acme_blog_get_user:
+    path:     /user/{id}
+    defaults: { _controller: AcmeBlogBundle:Default:getUser, id: 1 }
+    methods: [GET]
