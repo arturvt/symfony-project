@@ -10,13 +10,14 @@ namespace Blog\BaseCRUDBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\View\View;
-use Doctrine\DBAL\DBALException;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 use Blog\BaseCRUDBundle\Entity\BaseEntity;
-use Blog\DoctrineExceptionBundle\Service\DoctrineExceptionInterpreter;
+use Blog\BaseCRUDBundle\Util\ValidationException;
 
 
 class BaseCRUDController extends Controller {
@@ -66,6 +67,7 @@ class BaseCRUDController extends Controller {
     {
         try {
             $baseEntity = $this->getEntityService($entityService)->add($request->request->all());
+            var_dump($baseEntity);
             return View::create(['id' => $baseEntity->getId()], Response::HTTP_CREATED);
 
         } catch (ValidationException $ex) {
@@ -128,30 +130,12 @@ class BaseCRUDController extends Controller {
      */
     public function deleteAction($id, $entityService)
     {
-        try{
+        try {
             return $this->getEntityService($entityService)->delete($id);
-        } catch(DBALException $e) {
-
-            if ($this->getDoctrineExceptionInterpreter()->isIntegrityConstraintViolation($e)) {
-                $errorMessage = 'Cannot remove this entity because it has dependants';
-            } else {
-                $errorMessage = 'Unexpected error';
-            }
-
-            return View::create(['error' => $errorMessage], 500);
+        } catch (ValidationException $e) {
+            return View::create(['error' => $e->getErrors()], 500);
         }
     }
-
-    /**
-     * Get the interpreter for DBALExceptions
-     *
-     * @return DoctrineExceptionInterpreter
-     */
-    protected function getDoctrineExceptionInterpreter()
-    {
-        return $this->get('doctrine_exception.interpreter');
-    }
-
 
     public function getEntityService($entityService)
     {

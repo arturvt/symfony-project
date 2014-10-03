@@ -1,6 +1,6 @@
 blog_api:
     resource: "@BlogAPIBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /tests
 
 
 acme_blog:
