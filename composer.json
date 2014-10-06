@@ -21,6 +21,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "mockery/mockery": "master@dev",
         "squizlabs/php_codesniffer": "1.5.3",
+        "league/fractal": "0.8.*",
         "nelmio/api-doc-bundle": "dev-master"
     },
     "require-dev": {

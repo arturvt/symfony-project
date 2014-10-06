@@ -20,7 +20,8 @@ use Blog\BaseCRUDBundle\Entity\BaseEntity;
 use Blog\BaseCRUDBundle\Util\ValidationException;
 
 
-class BaseCRUDController extends Controller {
+class BaseCRUDController extends Controller
+{
     /**
      * Process the GET for an entity
      * Returns an Entity by id.

@@ -13,5 +13,13 @@ use Blog\BaseCRUDBundle\service\BaseCRUDService;
 
 class UserService extends BaseCRUDService
 {
-
+    //TODO - Implement all services for users.
+    /**
+     * @return array with all users
+     */
+    public function getAll()
+    {
+        $users = $this->em->getRepository($this->entityFullName)->findAll();
+        return $users;
+    }
 }
