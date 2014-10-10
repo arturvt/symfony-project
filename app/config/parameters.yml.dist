@@ -17,3 +17,6 @@ parameters:
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: true
+
+    fractal_transform_transformer_namespace: %TRANSFORMER_NAMESPACE%
+    fractal_transform_entity_namespace: %ENTITY_NAMESPACE%

@@ -24,5 +24,21 @@ class ProjectTesttestExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $this->mapParameters($container, $config);
     }
+
+    private function mapParameters(ContainerBuilder $container, $config)
+    {
+        $parameters = [
+            'transformer_namespace', 'optional'
+        ];
+
+        foreach ($parameters as $param) {
+            $container->setParameter(sprintf('blog_fractal_transform.fractal_transform.%s', $param), $config[$param]);
+        }
+    }
+
 }
+
+

@@ -20,9 +20,15 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('project_testtest');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        /** @noinspection PhpUndefinedMethodInspection */
+        $rootNode
+            ->children()
+            ->scalarNode('transformer_namespace')
+            ->isRequired()->cannotBeEmpty()
+            ->end()
+            ->variableNode('optional')->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }
