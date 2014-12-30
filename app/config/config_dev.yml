@@ -29,8 +29,27 @@ monolog:
         #    type:   chromephp
         #    level:  info
 
+fos_rest:
+    param_fetcher_listener: true
+    body_listener:
+        decoders:
+            json: fos_rest.decoder.json
+    format_listener:
+        rules:
+            - { path: '^/', priorities: ['json'], fallback_format: json, prefer_extension: true }
+    view:
+        view_response_listener: 'force'
+
+blog_base_crud:
+    transformer_namespace: %fractal_transform_transformer_namespace%
+    # optional array of configurations
+    optional:
+        entity_namespace: %fractal_transform_entity_namespace%
+
+
 assetic:
     use_controller: "%use_assetic_controller%"
 
 #swiftmailer:
 #    delivery_address: me@example.com
+

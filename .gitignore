@@ -20,3 +20,13 @@
 /.idea/workspace.xml
 
 /composer.lock
+
+/src/Blog/.DS_Store
+
+/src/.DS_Store
+
+/.idea/inspectionProfiles/
+
+/.idea/myproject.iml
+
+/.idea/codeStyleSettings.xml

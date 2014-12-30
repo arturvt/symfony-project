@@ -152,7 +152,11 @@ class BaseCRUDControllerTest extends KernelTestCase
         );
 
         // try to access the add action at a wrong service
+<<<<<<< HEAD
+        static::$controller->addAction($request, 'blog_base_crud.fake_entity_service_wrong');
+=======
         static::$controller->addAction($request, 'apple_base_entities.fake_entity_service_wrong');
+>>>>>>> refs/heads/master(github)
 
         // A validation exception should be raised
     }
