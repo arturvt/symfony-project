@@ -2,6 +2,7 @@ parameters:
      blog_base_crud.base_entity_service.class: Blog\BaseCRUDBundle\Service\BaseCRUDService
 
 services:
+<<<<<<< HEAD
     blog_base_crud.fake_entity_service:
           class: %blog_base_crud.base_entity_service.class%
           arguments: [@doctrine.orm.entity_manager, @form.factory, 'Blog\BaseCRUDBundle\Tests\Form\FakeEntityType', 'Blog\BaseCRUDBundle\Tests\Entity\FakeEntity']
@@ -23,3 +24,8 @@ services:
 #    blog_base_crud.example:
 #        class: %blog_base_crud.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+=======
+ blog_base_crud.fake_entity_service:
+        class: %blog_base_crud.base_entity_service.class%
+        arguments: [@doctrine.orm.entity_manager, @form.factory, 'Blog\BaseCRUDBundle\Tests\Form\FakeEntityType', 'Blog\BaseCRUDBundle\Tests\Entity\FakeEntity']
+>>>>>>> refs/heads/master(github)

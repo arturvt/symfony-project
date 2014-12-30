@@ -1,0 +1,11 @@
+services:
+    blog_fractal_tranformer.listener:
+        class: Blog\FractalTranformerBundle\Listener\FractalTransformerListener
+        arguments:
+         - @fos_rest.view_handler
+         - @doctrine.orm.entity_manager
+
+        tags:
+          - { name: kernel.event_listener, event: kernel.view, method: onKernelView, priority: 255}
+
+#        arguments: [@service_id, "plain_value", %parameter%]

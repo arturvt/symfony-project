@@ -1,0 +1,3 @@
+services:
+    blog_doctrine_exception.interpreter:
+        class: Blog\DoctrineExceptionBundle\Service\DoctrineExceptionInterpreter

@@ -1,0 +1,7 @@
+parameters:
+    blog_api.user_service.class: Blog\APIBundle\Service\UserService
+
+services:
+    blog_api.user_service:
+        class: %blog_api.user_service.class%
+        arguments: [@doctrine.orm.entity_manager, @form.factory, 'Blog\APIBundle\Form\UserType', 'Blog\APIBundle\Entity\User', @blog_doctrine_exception.interpreter ]

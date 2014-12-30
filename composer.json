@@ -11,16 +11,26 @@
         "symfony/symfony": "2.5.*",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
+        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "doctrine/migrations": "dev-master",
         "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "friendsofsymfony/rest-bundle": "dev-master",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "mockery/mockery": "master@dev",
+        "fzaninotto/faker": "v1.3.0",
+        "league/fractal": "0.8.*",
+        "nelmio/api-doc-bundle": "dev-master",
+        "squizlabs/php_codesniffer": "1.5.3",
+        "jms/serializer-bundle": "~0.13"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "phpunit/phpunit":"4.1.*"
     },
     "scripts": {
         "post-root-package-install": [

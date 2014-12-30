@@ -1,0 +1,43 @@
+# User Routes
+blog_api_users_add:
+    path:     /user
+    defaults: { _controller: BlogAPIBundle:User:add, _format: ~, entityService: blog_api.user_service }
+    requirements:
+        _method: POST
+
+
+blog_api_users_list:
+    path:     /user-list/.{_format}
+    defaults: { _controller: BlogAPIBundle:User:getUsersInfo, _format: ~ }
+    methods: GET
+
+blog_api_users_get_json:
+    path:     /user/{id}.{_format}
+    defaults: { _controller: BlogAPIBundle:User:getUserJson, _format: ~, entityService: blog_api.user_service  }
+    requirements:
+        _method: GET
+        id: "\d+"
+
+
+blog_api_users_get_html:
+    path:     /user-html/{id}.{_format}
+    defaults: { _controller: BlogAPIBundle:User:getWithHTML, _format: ~ }
+    requirements:
+        _method: GET
+        id: "\d+"
+
+blog_api_users_show_info:
+    path:     /user-info/{id}.{_format}
+    defaults: { _controller: BlogAPIBundle:User:show, _format: ~ }
+    requirements:
+        _method: GET
+        id: "\d+"
+
+
+
+blog_api_users_create:
+    path:     /user-create.{_format}
+    defaults: { _controller: BlogAPIBundle:User:create, _format: ~ }
+    requirements:
+        _method: GET
+        id: "\d+"

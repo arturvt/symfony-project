@@ -8,6 +8,7 @@
 
 namespace Blog\APIBundle\Transformer;
 
+<<<<<<< HEAD
 use Blog\APIBundle\Entity\User;
 use Blog\BaseCRUDBundle\Transformer\BaseTransformer;
 
@@ -36,4 +37,10 @@ class UserTransformer extends BaseTransformer
 
         return $response;
     }
+=======
+
+class UserTransformer
+{
+
+>>>>>>> refs/heads/master(github)
 }

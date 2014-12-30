@@ -1,0 +1,7 @@
+acme_blog_homepage:
+    path:     /
+    defaults: { _controller: AcmeBlogBundle:Default:index }
+
+acme_blog_hello_page:
+    path:     /hello/{name}
+    defaults: { _controller: AcmeBlogBundle:Default:hello }

@@ -1,10 +1,16 @@
+blog_api:
+    resource: "@BlogAPIBundle/Resources/config/routing.yml"
+    prefix:   /tests
+
+
+acme_blog:
+    resource: "@AcmeBlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+
 acme_test:
     resource: "@AcmeTestBundle/Resources/config/routing.yml"
     prefix:   /
 
-project_testtest:
-    resource: "@ProjectTesttestBundle/Resources/config/routing.yml"
-    prefix:   /
 
 contact:
   path: /contact
