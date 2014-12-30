@@ -21,6 +21,9 @@ class AppKernel extends Kernel
             new Blog\BaseCRUDBundle\BlogBaseCRUDBundle(),
             new Blog\APIBundle\BlogAPIBundle(),
             new Blog\DoctrineExceptionBundle\DoctrineExceptionBundle(),
+            new Blog\FractalTranformerBundle\BlogFractalTranformerBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
