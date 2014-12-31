@@ -23,7 +23,7 @@ class User extends BaseEntity
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=64, nullable=false, unique=true)
+     * @ORM\Column(type="string", length=64, nullable=false, unique=true)
      *
      * @Assert\Type(type="string")
      * @Assert\Length(max="64")
@@ -32,9 +32,18 @@ class User extends BaseEntity
     private $name;
 
     /**
-     * Get id
+     * @var string
      *
-     * @return integer
+     * @ORM\Column(type="string", length=64, nullable=false, unique=false)
+     *
+     * @Assert\Type(type="string")
+     * @Assert\Length(max="64")
+     * @Assert\NotBlank()
+     */
+    private $lastName;
+
+    /**
+     * @return int
      */
     public function getId()
     {
@@ -63,5 +72,21 @@ class User extends BaseEntity
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @param string $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
     }
 }
