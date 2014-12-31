@@ -134,7 +134,10 @@ class UserController extends BaseCRUDController
     public function getWithHTMLAction($id)
     {
         $user = $this->getUserEntity($id);
-        return $this->render('BlogAPIBundle:Default:index.html.twig', array('name' => ($user->getName())));
+        return $this->render('BlogAPIBundle:Default:index.html.twig', array(
+            'name' => ($user->getName()),
+            'lastName' => ($user->getLastName())
+            ));
     }
 
     public function createAction()
