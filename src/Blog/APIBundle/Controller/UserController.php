@@ -53,14 +53,24 @@ class UserController extends BaseCRUDController
 
     public function getUserJsonAction($id)
     {
-//        $user = $this->getUserEntity($id);
+        $user = $this->getUserEntity($id);
+
         // Create a top level instance somewhere
         $fractal = new Manager();
-//
-//        $userJson = [
-//            'id' => $user->getId(),
-//            'name' => $user->getName()
-//        ];
+
+        $userJson = [
+            'id' => $user->getId(),
+            'name' => $user->getName(),
+            'lastName' => $user->getLastName()
+        ];
+
+        $userData = [
+            'status' => 'ok',
+            'pages' => 1,
+            'people' => [
+                $userJson
+            ]
+        ];
 
 
 
@@ -101,7 +111,8 @@ class UserController extends BaseCRUDController
                     ]
                 ];
         });
-        $response = new Response($fractal->createData($resource)->toJson());
+        $response = new Response(json_encode($userData));
+//        $response = new Response($fractal->createData($resource)->toJson());
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
