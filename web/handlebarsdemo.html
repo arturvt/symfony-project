@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Handlebars demo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"></head>
+<body>
+
+<div class="main-div">
+    <h1>Listing posts!</h1>
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+            <h1>{{title}}</h1>
+            <div class="body">
+    {{{body}}}
+            </div>
+        </div>
+    </script>
+
+    <div id="list">
+        <h1>Listing users</h1>
+            <script id="list-json" class="title-div" type="text/x-handlebars-template">
+                {{#list people}}{{firstName}} {{lastName}}{{/list}}
+            </script>
+        <h2>End listing....</h2>
+    </div>
+
+    <script id="list-template" type="text/x-handlebars-template">
+	    {{#list people}}{{firstName}} {{lastName}}{{/list}}
+    </script>
+
+
+    <div id="footer">
+        Loading contents...
+    </dib>
+
+</div>
+
+
+
+ <script src="js/libs/jquery-v1.11.1.js"></script>
+ <script src="js/libs/handlebars-v1.3.0.js"></script>
+ <script src="js/handlebar_test.js"></script>
+</body>
+</html>

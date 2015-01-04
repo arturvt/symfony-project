@@ -1,0 +1,32 @@
+/* Put your CSS here */
+html, body {
+    margin: 20px;
+    padding: 2px;
+    background-color: lightslategray;
+}
+
+.main-div {
+    padding: 5px;
+}
+
+.title-div {
+    text-align: center;
+    padding: 3px;
+    margin: 20px;
+    background-color: lightgray;
+}
+
+#footer  {
+    /*font-size:xx-small;*/
+    text-align:left;
+    width:100%;
+    bottom:0px;
+    position:fixed;
+    left:0px;
+    background-color: #CCCCCC;
+    border-top: 1px solid #999999;
+    padding:4px;
+    color:#666666;
+    visibility: hidden;
+
+}
