@@ -14,3 +14,20 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+# Doctrine Configuration
+doctrine:
+#    dbal:
+#        default_connection: default
+#        connections:
+#            default:
+#                driver: pdo_sqlite
+#                path: test_database.db
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: true
+        mappings:
+            BlogBaseCRUDBundle:
+                mapping: true
+                prefix: Blog\BaseCRUDBundle\Tests\Entity
+                dir: /Tests/Entity/

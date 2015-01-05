@@ -46,8 +46,11 @@ class BaseCRUDControllerTest extends KernelTestCase
         $schemaTool = new SchemaTool($em);
         $metadata = $em->getMetadataFactory()->getAllMetadata();
 
+        echo "Droppping schema!\n";
         // Drop and recreate tables for all entities
+        $schemaTool->dropDatabase();
         $schemaTool->updateSchema($metadata);
+
 
         // adding some fake data to the database
         $fakeEntity = new FakeEntity();
@@ -63,6 +66,14 @@ class BaseCRUDControllerTest extends KernelTestCase
         $em->flush();
     }
 
+    /**
+     * Run after test class execution.
+     * Should clear the entity created.
+     */
+    public static function setUpAfterClass()
+    {
+
+    }
     /**
      * Runs before each test execution.
      * For each test we need to boot a new kernel and retrieve a new instance of BaseEntityController.

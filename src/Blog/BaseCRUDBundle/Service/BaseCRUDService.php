@@ -94,8 +94,6 @@ class BaseCRUDService
      */
     public function add(array $data)
     {
-        echo 'Content:...';
-        var_dump($data);
         if (empty($data)) {
             throw new InvalidArgumentException("Invalid params.");
         }
