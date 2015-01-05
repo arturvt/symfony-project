@@ -23,7 +23,7 @@ class AppKernel extends Kernel
             new Blog\FractalTranformerBundle\BlogFractalTranformerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-
+            new Blog\TodoBundle\BlogTodoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
