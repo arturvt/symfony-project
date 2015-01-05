@@ -68,7 +68,7 @@ function loadJSON() {
 
         error: function errorExpandedPortfolio(response) {
             console.log('Error! Response: ', response);
-            $("#footer").css("background-color", "red").text("Error loading Json");
+            $("#footer").css("background-color", "red").text("Error loading Json. Reason: "+response.statusText);
 
         },
 

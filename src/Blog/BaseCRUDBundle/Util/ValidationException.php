@@ -8,7 +8,6 @@
 
 namespace Blog\BaseCRUDBundle\Util;
 
-
 class ValidationException extends \Exception
 {
     /**
