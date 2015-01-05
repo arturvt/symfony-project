@@ -2,7 +2,9 @@
 
 namespace Blog\APIBundle\Entity;
 
+use Blog\BaseCRUDBundle\Entity\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -10,42 +12,35 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Post
+class Post extends BaseEntity
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="post_date", type="datetime")
+     * @ORM\Column(type="datetime")
      */
     private $postDate;
 
     /**
-     * @var integer
+     * @var User
      *
-     * @ORM\Column(name="user_id", type="integer")
+     * @ORM\ManyToOne(targetEntity="User", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank()
      */
-    private $userId;
+    private $createdBy;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(type="text")
      */
     private $content;
 
@@ -53,7 +48,7 @@ class Post
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +71,7 @@ class Post
     /**
      * Get postDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getPostDateDatetime()
     {
@@ -86,24 +81,24 @@ class Post
     /**
      * Set userId
      *
-     * @param integer $userId
+     * @param User $createdBy
      * @return Post
      */
-    public function setUserId($userId)
+    public function setCreatedBy($createdBy)
     {
-        $this->userId = $userId;
+        $this->createdBy = $createdBy;
 
         return $this;
     }
 
     /**
-     * Get userId
+     * Gets the User creator
      *
-     * @return integer 
+     * @return User
      */
-    public function getUserId()
+    public function getCreatedBy()
     {
-        return $this->userId;
+        return $this->$createdBy;
     }
 
     /**
@@ -122,7 +117,7 @@ class Post
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {

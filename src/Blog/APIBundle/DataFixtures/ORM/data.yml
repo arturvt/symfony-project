@@ -1,0 +1,42 @@
+# Pulse Fixtures
+## docs: https://github.com/nelmio/alice
+
+## User
+Blog\APIBundle\Entity\User:
+    user1:
+        name: Van
+        lastName: Gogh
+    user2:
+        name: Ludwig
+        lastName: Beethoven
+    user3:
+        name: Wolfgang
+        lastName: Mozart
+    user4:
+        name: Johann
+        lastName: Bach
+    user5:
+        name: Frédéric
+        lastName: Chopin
+    user6:
+        name: Antonio
+        lastName: Vivaldi
+
+
+## Post
+Blog\APIBundle\Entity\Post:
+    post1:
+        postDate: <dateTimeBetween('-200 days', 'now')>
+        createdBy: @user1
+        title: First post title
+        content: Post related to user 1.
+    post2:
+        postDate: <dateTimeBetween('-200 days', 'now')>
+        createdBy: @user2
+        title: Second post title
+        content: Post related to user 2.
+    post3:
+        postDate: <dateTimeBetween('-200 days', 'now')>
+        createdBy: @user3
+        title: Third post title
+        content: Post related to user 3.

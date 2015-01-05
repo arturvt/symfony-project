@@ -32,5 +32,10 @@ monolog:
 assetic:
     use_controller: "%use_assetic_controller%"
 
+# Alice setup
+hautelook_alice:
+    locale: en_US   # default
+    seed: 1         # default
+
 #swiftmailer:
 #    delivery_address: me@example.com

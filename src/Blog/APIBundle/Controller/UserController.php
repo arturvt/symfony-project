@@ -15,6 +15,7 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Translation\Exception\NotFoundResourceException;
 
@@ -52,14 +53,24 @@ class UserController extends BaseCRUDController
 
     public function getUserJsonAction($id)
     {
-//        $user = $this->getUserEntity($id);
+        $user = $this->getUserEntity($id);
+
         // Create a top level instance somewhere
         $fractal = new Manager();
-//
-//        $userJson = [
-//            'id' => $user->getId(),
-//            'name' => $user->getName()
-//        ];
+
+        $userJson = [
+            'id' => $user->getId(),
+            'name' => $user->getName(),
+            'lastName' => $user->getLastName()
+        ];
+
+        $userData = [
+            'status' => 'ok',
+            'pages' => 1,
+            'people' => [
+                $userJson
+            ]
+        ];
 
 
 
@@ -100,9 +111,12 @@ class UserController extends BaseCRUDController
                     ]
                 ];
         });
+        $response = new Response(json_encode($userData));
+//        $response = new Response($fractal->createData($resource)->toJson());
+        $response->headers->set('Content-Type', 'application/json');
 
-
-        return new Response($fractal->createData($resource)->toJson());
+        return $response;
+//        return new Response($fractal->createData($resource)->toJson());
     }
 
 
@@ -131,7 +145,10 @@ class UserController extends BaseCRUDController
     public function getWithHTMLAction($id)
     {
         $user = $this->getUserEntity($id);
-        return $this->render('BlogAPIBundle:Default:index.html.twig', array('name' => ($user->getName())));
+        return $this->render('BlogAPIBundle:Default:index.html.twig', array(
+            'name' => ($user->getName()),
+            'lastName' => ($user->getLastName())
+            ));
     }
 
     public function createAction()

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Artur
- * Date: 9/30/14
- * Time: 11:08 AM
- */
 
 namespace Blog\BaseCRUDBundle\Tests\Entity;
 
@@ -12,6 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Blog\BaseCRUDBundle\Entity\BaseEntity;
 
+/**
+ * FakeEntity
+ * @package Blog\BaseCRUDBundle\Tests\Entity
+ *
+ * @ORM\Entity
+ * @ORM\Table()
+ *
+ */
 class FakeEntity extends BaseEntity
 {
     /**

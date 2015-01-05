@@ -20,3 +20,5 @@
 /.idea/workspace.xml
 
 /composer.lock
+
+/src/Blog/.DS_Store

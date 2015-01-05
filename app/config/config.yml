@@ -33,7 +33,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ BlogAPIBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -58,7 +58,10 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
+#        auto_mapping: true
+        entity_managers:
+            default:
+                auto_mapping: true
 
 # Swiftmailer Configuration
 swiftmailer:

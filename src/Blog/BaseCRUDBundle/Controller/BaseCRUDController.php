@@ -68,7 +68,6 @@ class BaseCRUDController extends Controller
     {
         try {
             $baseEntity = $this->getEntityService($entityService)->add($request->request->all());
-            var_dump($baseEntity);
             return View::create(['id' => $baseEntity->getId()], Response::HTTP_CREATED);
 
         } catch (ValidationException $ex) {

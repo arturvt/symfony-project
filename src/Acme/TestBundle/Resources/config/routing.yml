@@ -1,9 +1,0 @@
-acme_test_homepage:
-    path:     /tester/{name}/{lastName}
-    defaults: { _controller: AcmeTestBundle:Default:index, color: green}
-    requirements:
-      lastName: ".+"
-
-acme_test_homepage:
-    path:     /tester-about
-    defaults: { _controller: AcmeTestBundle:Default:showInfo}

@@ -15,22 +15,25 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Acme\TestBundle\AcmeTestBundle(),
-            new Acme\BlogBundle\AcmeBlogBundle(),
             new Blog\BaseCRUDBundle\BlogBaseCRUDBundle(),
             new Blog\APIBundle\BlogAPIBundle(),
             new Blog\DoctrineExceptionBundle\DoctrineExceptionBundle(),
             new Blog\FractalTranformerBundle\BlogFractalTranformerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            // Related to fixture data
+            $bundles[] = new Nelmio\ApiDocBundle\NelmioApiDocBundle();
+            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
+            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         }
 
         return $bundles;

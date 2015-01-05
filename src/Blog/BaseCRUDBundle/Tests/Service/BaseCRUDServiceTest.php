@@ -232,7 +232,7 @@ class BaseCRUDServiceTest extends \PHPUnit_Framework_TestCase
      * Update a Object with an invalid data
      * In this case using FakeEntity as example.
      *
-     * @expectedException   ValidationException
+     * @expectedException   \Blog\BaseCRUDBundle\Util\ValidationException
      */
     public function testUpdateWithInvalidFakeEntity()
     {
@@ -316,7 +316,7 @@ class BaseCRUDServiceTest extends \PHPUnit_Framework_TestCase
     /**
      * Should throw a validation exception for an 'unexpected error'
      *
-     * @expectedException   ValidationException
+     * @expectedException   \Doctrine\DBAL\DBALException
      *
      */
     public function testDeleteUnexpectedError()
