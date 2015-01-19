@@ -1,6 +1,6 @@
 blog_todo:
     resource: "@BlogTodoBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /todo
 
 blog_api:
     resource: "@BlogAPIBundle/Resources/config/routing.yml"

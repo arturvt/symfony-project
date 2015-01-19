@@ -1,3 +1,9 @@
 blog_todo_homepage:
     path:     /hello/{name}
     defaults: { _controller: BlogTodoBundle:Default:index }
+
+blog_todo_homepage_only_int:
+    path:     /hello_int/{name}/{age}
+    defaults: { _controller: BlogTodoBundle:Default:index }
+    requirements:
+        age: "\d+"
