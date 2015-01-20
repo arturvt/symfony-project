@@ -20,8 +20,8 @@
          </header>
 
         <section id="main">
-          {{outlet}}
-          <input type="checkbox" id="toggle-all">
+            {{outlet}}
+            {{input type="checkbox" id="toggle-all" checked=allAreDone}}
         </section>
 
         <footer id="footer">
@@ -39,9 +39,11 @@
                 {{#link-to "todos.completed" activeClass="selected" }}Completed{{/link-to}}
               </li>
             </ul>
-             <button id="clear-completed">
-                Clear completed (1)
-            </button>
+            {{#if hasCompleted}}
+                 <button id="clear-completed" {{action "clearCompleted"}}>
+                    Clear completed ({{completed}})
+                </button>
+            {{/if}}
         </footer>
     </section>
     <!-- User list section -->
@@ -50,6 +52,7 @@
         <ul>
             <li>User 01</li>
             <li>User 02</li>
+            <li>User 03</li>
         </ul>
     </section>
     <footer id="info">
@@ -80,6 +83,7 @@
 <script src="js/libs/handlebars-v2.0.0.js"></script>
 <script src="js/libs/ember.min-2.js"></script>
 <script src="js/libs/ember-data.js"></script>
+<script src="js/libs/localstorage_adapter.js"></script>
 
 <!-- ... Ember.js and other javascript dependencies ... -->
 <script src="js/application.js"></script>

@@ -60,6 +60,8 @@ body {
 
 #user-list h2 {
 	text-align: center;
+    text-decoration: inherit;
+    text-emphasis-color: red;
 }
 
 #user-list li {

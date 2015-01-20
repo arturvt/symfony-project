@@ -39,4 +39,3 @@ Todos.TodosCompletedRoute = Ember.Route.extend({
         this.render('todos/index', {controller:controller});
     }
 });
-
