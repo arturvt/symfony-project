@@ -40,7 +40,7 @@ class BaseCRUDServiceTest extends \PHPUnit_Framework_TestCase
     /**
      * Addresses the Doctrine to be mocked
      */
-    const DOCTRINE_EXCEPTION_INTERPRETER = 'Apple\DoctrineExceptionBundle\Service\DoctrineExceptionInterpreter';
+    const DOCTRINE_EXCEPTION_INTERPRETER = 'Blog\DoctrineExceptionBundle\Service\DoctrineExceptionInterpreter';
 
     /**
      * @var \Doctrine\ORM\EntityManager
